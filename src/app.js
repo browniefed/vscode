@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import "./app.css";
 
-const strToArray = (code = "") => {
-  return code.split("\n");
-}
-
 const getOutput = (name, prefix, code = "", description) => {
   const output = JSON.stringify({
     [name]: {
       prefix,
-      body: strToArray(code),
+      body: code.split("\n"),
       description,
     }
   }, null, 2);
